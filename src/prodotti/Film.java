@@ -25,4 +25,9 @@ public class Film extends Prodotto {
         }
             this.durata = durata;
     }
+
+    @Override
+    public String toString() {
+        return titolo;
+    }
 }

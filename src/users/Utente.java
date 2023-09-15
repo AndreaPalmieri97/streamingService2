@@ -78,5 +78,18 @@ public class Utente {
         int stelle = scanner.nextInt();
         p.mediaValutazione(stelle);
     }
+
+    public static void listaProdotti(Prodotto[] prodotti){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Quale lista di prodotti vuoi visualizzare?");
+        String listaDaVisualizzare = "class prodotti.";
+        listaDaVisualizzare += scan.nextLine();
+
+        for(Prodotto prodotto : prodotti){
+            if(listaDaVisualizzare.equalsIgnoreCase(prodotto.getClass().toString())){
+                System.out.println(prodotto.toString());
+            }
+        }
+    }
 }
 

@@ -42,4 +42,9 @@ public class SerieTV extends Prodotto {
         }
         this.episodiPerStagione = episodiPerStagione;
     }
+
+    @Override
+    public String toString() {
+        return titolo;
+    }
 }

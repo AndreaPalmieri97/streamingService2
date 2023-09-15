@@ -21,4 +21,9 @@ public class Documentario extends Prodotto {
     public void setGenereDocumentario(GenereDocumentario genereDocumentario) {
         this.genereDocumentario = genereDocumentario;
     }
+
+    @Override
+    public String toString() {
+        return titolo;
+    }
 }

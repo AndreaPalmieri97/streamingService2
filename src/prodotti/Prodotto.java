@@ -12,7 +12,7 @@ public class Prodotto {
     protected boolean pg;
     protected boolean original;
     protected double valutazione;
-
+    double valutazioneAttuale = 0;
     protected int numValutazioni;
 
     public Prodotto(String titolo, int anno, Attore[] cast, Genere genere, boolean pg, boolean original) {
@@ -73,8 +73,8 @@ public class Prodotto {
 
     public void mediaValutazione(int stelle){
         numValutazioni++;
-        double valutazioneAttuale = this.valutazione;
         valutazione = (valutazioneAttuale + stelle) / numValutazioni;
+        valutazioneAttuale = valutazioneAttuale + stelle;
         System.out.println("La nuova valutazione del prodotto " + titolo + " è: " + valutazione);
     }
 }
