@@ -11,6 +11,9 @@ public class Prodotto {
     protected Genere genere;
     protected boolean pg;
     protected boolean original;
+    protected double valutazione;
+
+    protected int numValutazioni;
 
     public Prodotto(String titolo, int anno, Attore[] cast, Genere genere, boolean pg, boolean original) {
         this.titolo = titolo;
@@ -34,10 +37,6 @@ public class Prodotto {
 
     public int getAnno() {
         return anno;
-    }
-
-    public void setAnno(int anno) {
-        this.anno = anno;
     }
 
     public Attore[] getCast() {
@@ -71,4 +70,13 @@ public class Prodotto {
     public void setOriginal(boolean original) {
         this.original = original;
     }
+
+    public void mediaValutazione(int stelle){
+        numValutazioni++;
+        double valutazioneAttuale = this.valutazione;
+        valutazione = (valutazioneAttuale + stelle) / numValutazioni;
+        System.out.println("La nuova valutazione del prodotto " + titolo + " è: " + valutazione);
+    }
 }
+
+

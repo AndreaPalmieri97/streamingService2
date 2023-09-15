@@ -9,6 +9,9 @@ public class Film extends Prodotto {
 
     public Film(String titolo, int anno, Attore[] cast, Genere genere, boolean pg, boolean original, int durata) {
         super(titolo, anno, cast, genere, pg, original);
+            if(durata < 45 || durata > 200){
+                throw new IllegalArgumentException("Durata del film inserita non valida");
+            }
         this.durata = durata;
     }
 
@@ -17,6 +20,9 @@ public class Film extends Prodotto {
     }
 
     public void setDurata(int durata) {
-        this.durata = durata;
+        if(durata < 45 || durata > 200){
+            throw new IllegalArgumentException("Durata del film inserita non valida");
+        }
+            this.durata = durata;
     }
 }

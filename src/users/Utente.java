@@ -1,5 +1,9 @@
 package users;
 
+import prodotti.Prodotto;
+
+import java.util.Scanner;
+
 public class Utente {
 
     private String nome;
@@ -7,6 +11,7 @@ public class Utente {
     private boolean isKid;
     private String pin;
     private Account account;
+    private Prodotto[] laMiaLista = new Prodotto[10];
 
     public Utente(String nome, String avatar, boolean isKid, String pin, Account account) {
         this.nome = nome;
@@ -55,4 +60,23 @@ public class Utente {
     public void setAccount(Account account) {
         this.account = account;
     }
+
+    public void listaProdotti(Prodotto p){
+        boolean flag = false;
+        for (int i = 0; i < laMiaLista.length; i++) {
+            if (laMiaLista[i] == null) {
+                laMiaLista[i] = p;
+                flag = true;
+            }
+        }
+        if (!flag) System.out.println("ERRORE! Numero massimo di prodotti aggiunti alla lista");
+    }
+
+    public void valutazione(Prodotto p){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci una valore da 1 a 5");
+        int stelle = scanner.nextInt();
+        p.mediaValutazione(stelle);
+    }
 }
+
